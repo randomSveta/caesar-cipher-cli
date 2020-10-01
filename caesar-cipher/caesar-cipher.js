@@ -1,9 +1,9 @@
-module.exports = function cipher(action, shift, input) {
+const { checkCipherFunctionParams } = require("./error-handling")
+
+function cipher(action, shift, input) {
     const ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-    if (!action || !shift || !input || isNaN(Number.parseFloat(shift))) {
-        console.error("error: Wrong parameter (action or shift or input) value. Change command and try again.");
-        process.exit(1);
-    };
+    checkCipherFunctionParams(action, shift, input);
+    if (+shift > 25 || +shift < 0) return input;
 
     return input
         .split("").map(symbol => {
@@ -16,13 +16,18 @@ module.exports = function cipher(action, shift, input) {
                 if (action === "decode") index -= +shift;
 
                 if (index >= 26) index -= 26;
-                if (index < 0) index = 26 - index;
+                if (index < 0) index = 26 + index; // + because value is negative
 
                 symbol = ALPHABET[index];
             }
-
+            if (!symbol) {
+                console.error("error: ")
+            }
             return capital
                 ? symbol.toUpperCase()
                 : symbol;
         }).join("");
+}
+module.exports = {
+    cipher,
 }
