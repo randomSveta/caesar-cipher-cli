@@ -2,8 +2,8 @@ const { checkCipherFunctionParams } = require("./error-handling")
 
 function cipher(action, shift, input) {
     const ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+
     checkCipherFunctionParams(action, shift, input);
-    if (+shift > 25 || +shift < 0) return input;
 
     return input
         .split("").map(symbol => {
