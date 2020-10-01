@@ -1,4 +1,4 @@
-const { checkCipherFunctionParams } = require("./error-handling")
+const { checkCipherFunctionParams } = require("./error-handler")
 
 function cipher(action, shift, input) {
     const ALPHABET = "abcdefghijklmnopqrstuvwxyz";

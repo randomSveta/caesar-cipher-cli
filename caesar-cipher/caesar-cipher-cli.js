@@ -3,7 +3,7 @@
 const { pipeline } = require('stream');
 const { CaesarCipherTransform } = require('./CaesarCipherTransform');
 const optionsCLI = require('./cli-options');
-const { checkIfFileIsAvailable } = require('./error-handling');
+const { checkIfFileIsAvailable } = require('./error-handler');
 const fs = require('fs');
 
 const receivedOptions = optionsCLI();
@@ -28,9 +28,9 @@ pipeline(
     writable,
     (err) => {
         if (err) {
-            console.error('Pipeline failed.\n', "error:" + err.message);
+            console.error('Failed.\n', "error:" + err.message);
         } else {
-            console.log('Pipeline succeeded.');
+            console.log('Succeeded.');
         }
     }
 )
