@@ -29,7 +29,7 @@ CLI tool accepts 4 options (short alias and full name):
 
 **Usage example:**
 
-1. **All options exist and valid (could use short or long option names)**
+1. **All options exist and valid (could use short or long option names), action is encode**
   ```bash
   $ node caesar-cipher-cli -a encode -s 7 -i "./input.txt" -o "./output.txt"
   ```
@@ -42,7 +42,26 @@ CLI tool accepts 4 options (short alias and full name):
   - input.txt `This is secret. Message about "_" symbol!`
   - output.txt ... + `Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
 
-2. **"action" option is missing**
+  ```
+  > Succeeded.
+  ```
+2. **All options exist and valid (could use short or long option names), action is decode**
+  ```bash
+  $ node caesar-cipher-cli -a decode -s 7 -i "./input.txt" -o "./output.txt"
+  ```
+  or
+  ```bash
+  $ node caesar-cipher-cli --action decode --shift 7 --input input.txt --output output.txt
+  ```
+  If you run this command twice or more times, the new output text will be added to the existing text in "output.txt".
+
+  - input.txt `Aopz pz zljyla. Tlzzhnl hivba "_" zftivs!`
+  - output.txt ... + `This is secret. Message about "_" symbol!`
+
+  ```
+  > Succeeded.
+  ```
+3. **"action" option is missing**
   ```bash
   $ node caesar-cipher-cli -s 7 -i "./input.txt" -o "./output.txt"
   ```
@@ -54,7 +73,7 @@ CLI tool accepts 4 options (short alias and full name):
   > error: required option '-a, --action <type>' not specified
   ```
 
-3. **"shift" option is missing**
+4. **"shift" option is missing**
   ```bash
   $ node caesar-cipher-cli -a encode -i "./input.txt" -o "./output.txt"
   ```
@@ -66,7 +85,7 @@ CLI tool accepts 4 options (short alias and full name):
   > error: required option '-s, --shift <number>' not specified
   ```
 
-4. **"input" option is missing and "output" file is valid and exists**
+5. **"input" option is missing and "output" file is valid and exists**
   ```bash
   $ node caesar-cipher-cli -a encode -s 7 -o "./output.txt"
   ```
@@ -80,7 +99,7 @@ CLI tool accepts 4 options (short alias and full name):
   >
   ```
 
-5. **"output" option is missing and "input" file is valid and exists**
+6. **"output" option is missing and "input" file is valid and exists**
   ```bash
   $ node caesar-cipher-cli -a encode -s 7 -i "./input.txt"
   ```
@@ -95,7 +114,7 @@ CLI tool accepts 4 options (short alias and full name):
 
   ```
 
-6. **"action" option value is empty and other options are valid**
+7. **"action" option value is empty and other options are valid**
   ```bash
   $ node caesar-cipher-cli -a -s 7 -i "./input.txt" -o "./output.txt"
   ```
@@ -109,7 +128,7 @@ CLI tool accepts 4 options (short alias and full name):
   > error: required option '-s, --shift <number>' not specified
   ```
 
-7. **"action" option value is wrong value (not "encode"/"decode") and other options are valid**
+8. **"action" option value is wrong value (not "encode"/"decode") and other options are valid**
 
   ```bash
   $ node caesar-cipher-cli -a puppy -s 7 -i "./input.txt" -o "./output.txt"
@@ -121,7 +140,7 @@ CLI tool accepts 4 options (short alias and full name):
   > error: wrong 'action' option value, must be 'encode' or 'decode'
   ```
 
-8. **"shift" option value is missing (not "encode"/"decode") and other options are valid**
+9. **"shift" option value is missing (not "encode"/"decode") and other options are valid**
   ```bash
   $ node caesar-cipher-cli -a encode -s -i "./input.txt" -o "./output.txt"
   ```
@@ -136,7 +155,7 @@ CLI tool accepts 4 options (short alias and full name):
   > error: wrong 'shift' option value, must be an integer number between 0(inclusive) and 26(not inclusive)
   ```
 
-9. **"shift" option value is wrong value (not integer between 0(inclusive) and 26(not inclusive)) and other options are valid**
+10. **"shift" option value is wrong value (not integer between 0(inclusive) and 26(not inclusive)) and other options are valid**
   ```bash
   $ node caesar-cipher-cli -a encode -s 7.5 -i "./input.txt" -o "./output.txt"
   ```
@@ -147,7 +166,7 @@ CLI tool accepts 4 options (short alias and full name):
   > error: wrong 'shift' option value, must be an integer number between 0(inclusive) and 26(not inclusive)(inclusive) and 26(not inclusive)
   ```
 
-10. **"input" option value is missing or non-existing file name and other options are valid**
+11. **"input" option value is missing or non-existing file name and other options are valid**
   ```bash
   $ node caesar-cipher-cli -a encode -s 7 -i -o "./output.txt"
   ```
@@ -161,7 +180,7 @@ CLI tool accepts 4 options (short alias and full name):
   > error: file '-o' does not exist
   ```
 
-11. **"input" value is missing and there is no "output" option**
+12. **"input" value is missing and there is no "output" option**
   ```bash
     $ node caesar-cipher-cli -a encode -s 7 -i
   ```
@@ -173,7 +192,7 @@ CLI tool accepts 4 options (short alias and full name):
   > error: option '-i, --input <file_name_input>' argument missing
   ```
 
-12. **"output" option value is missing and other options are valid**
+13. **"output" option value is missing and other options are valid**
   ```bash
   $ node caesar-cipher-cli -a encode -s 7 -i "./input.txt" -o
   ```
