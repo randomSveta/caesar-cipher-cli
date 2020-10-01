@@ -12,8 +12,12 @@ CLI tool accepts 4 options (short alias and full name):
 3.  **-o, --output**: an output file
 4.  **-a, --action**: an action encode/decode
 
-**Details:**
+**IMPORTANT!!!**
+**To start using this Caesar Cipher CLI:**
+- go to the "/caesar-cipher" folder. All commands must be run from this folder.
+- run "npm install" in the "/caesar-cipher" folder.
 
+**Details:**
 1. For command-line arguments this interface uses
    [https://www.npmjs.com/package/commander](https://www.npmjs.com/package/commander)
 2. "Commander" sends an error to _process.stderr_ and exits with code 1, if _action_ (encode/decode) or the _shift_ is missing. **ex.:** error: required option '-a, --action <type>' not specified
@@ -22,7 +26,6 @@ CLI tool accepts 4 options (short alias and full name):
 5. If the input and/or output file is given but doesn't exist or you can't read it (e.g. because of permissions or it is a directory) - human-friendly error will be printed in _stderr_ and CLI exits with code 1.
 6. If passed params are fine the output (file or stdout) contains encoded/decoded content of input (file or stdin).
 7. For encoding/decoding only the English alphabet is used, all other characters will be kept untouched.
-8. To start using this Caesar Cipher CLI, go to the "/caesar-cipher" folder. All commands must be run from this folder.
 
 **Usage example:**
 
