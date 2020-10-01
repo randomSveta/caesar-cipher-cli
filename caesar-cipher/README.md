@@ -151,7 +151,7 @@ CLI tool accepts 4 options (short alias and full name):
   - output.txt stays unchanged
 
   ```
-  >`This is secret. Message about "_" symbol!`
+  > This is secret. Message about "_" symbol!
   > error: wrong 'shift' option value, must be an integer number between 0(inclusive) and 26(not inclusive)
   ```
 
