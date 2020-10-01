@@ -2,7 +2,7 @@
 	"name": "caesar-cipher-cli",
 	"version": "1.0.0",
 	"description": "caesar cipher task RSS",
-	"main": "my_caesar_cli.js",
+	"main": "caesar-cipher-cli.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

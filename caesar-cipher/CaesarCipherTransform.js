@@ -1,6 +1,6 @@
 const { Transform } = require('stream');
 const { StringDecoder } = require('string_decoder');
-const cipher = require('./cipher');
+const { cipher } = require('./caesar-cipher');
 
 class CaesarCipherTransform extends Transform {
     constructor(action, shift) {
@@ -25,7 +25,7 @@ class CaesarCipherTransform extends Transform {
         }
 
         //change
-        chunk = cipher(this.action, this.shift, chunk);
+        chunk = cipher(this.action, this.shift, chunk) + "\n";
 
         // Pass the chunk on.
         callback(null, chunk)
