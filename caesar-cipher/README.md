@@ -1,7 +1,7 @@
 # Caesar Cipher CLI
 
-[ Task Description](https://github.com/rolling-scopes-school/nodejs-course-template/blob/master/TASKS.md#task-1-caesar-cipher-cli-tool)
-[Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher)\*\*.
+- [ Task Description](https://github.com/rolling-scopes-school/nodejs-course-template/blob/master/TASKS.md#task-1-caesar-cipher-cli-tool)
+- [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
 
 ## Options
 
