@@ -3,6 +3,14 @@
 - [ Task Description](https://github.com/rolling-scopes-school/nodejs-course-template/blob/master/TASKS.md#task-1-caesar-cipher-cli-tool)
 - [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
 
+## How to start
+
+**To start using this Caesar Cipher CLI:**
+- go to the "/caesar-cipher" folder. **ALL commands must be run from this folder**
+- run "npm install" in the "/caesar-cipher" folder
+- start using Caesar Cipher CLI commands and options
+- command format "node caesar-cipher-cli <option 1> <option 2> ...."
+
 ## Options
 
 CLI tool accepts 4 options (short alias and full name):
@@ -12,12 +20,7 @@ CLI tool accepts 4 options (short alias and full name):
 3.  **-o, --output**: an output file
 4.  **-a, --action**: an action encode/decode
 
-**IMPORTANT!!!**
-**To start using this Caesar Cipher CLI:**
-- go to the "/caesar-cipher" folder. All commands must be run from this folder.
-- run "npm install" in the "/caesar-cipher" folder.
-
-**Details:**
+## Details and examples
 1. For command-line arguments this interface uses
    [https://www.npmjs.com/package/commander](https://www.npmjs.com/package/commander)
 2. "Commander" sends an error to _process.stderr_ and exits with code 1, if _action_ (encode/decode) or the _shift_ is missing. **ex.:** error: required option '-a, --action <type>' not specified
@@ -27,7 +30,7 @@ CLI tool accepts 4 options (short alias and full name):
 6. If passed params are fine the output (file or stdout) contains encoded/decoded content of input (file or stdin).
 7. For encoding/decoding only the English alphabet is used, all other characters will be kept untouched.
 
-**Usage example:**
+**Usage examples:**
 
 1. **All options exist and valid (could use short or long option names), action is encode**
   ```bash
