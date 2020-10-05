@@ -16,8 +16,8 @@
 CLI tool accepts 4 options (short alias and full name):
 
 1.  **-s, --shift**: a shift
-2.  **-i, --input**: an input file
-3.  **-o, --output**: an output file
+2.  **-i, --input**: an input file path
+3.  **-o, --output**: an output file path
 4.  **-a, --action**: an action encode/decode
 
 ## Details and examples
@@ -31,6 +31,7 @@ CLI tool accepts 4 options (short alias and full name):
 7. For encoding/decoding only the English alphabet is used, all other characters will be kept untouched.
 
 **Usage examples:**
+> _Files input.txt and output.txt are just an example, any files could be used with any other name and absolute or relative path_
 
 1. **All options exist and valid (could use short or long option names), action is encode**
   ```bash
